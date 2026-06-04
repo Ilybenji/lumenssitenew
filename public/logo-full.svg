@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 3000 2000" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(1,0,0,1,-96.657143,-27.75)">
+        <g transform="matrix(0.621821,0,0,0.621821,50.666073,519.411647)">
+            <path d="M1300,693L1300,444L1549,444L1549,693L1300,693ZM802,942L802,444L1051,444L1051,693L1300,693L1300,942L1549,942L1549,1191L1051,1191L1051,942L802,942Z"/>
+        </g>
+        <g transform="matrix(7.25319,0,0,7.25319,-8406.19993,-5776.475757)">
+            <g transform="matrix(50,0,0,50,1524.638057,955.401161)">
+            </g>
+            <text x="1322.688px" y="955.401px" style="font-family:'Outfit-SemiBold', 'Outfit';font-weight:600;font-size:50px;">Lumense</text>
+        </g>
+    </g>
+</svg>

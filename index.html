@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary meta -->
+    <title>Lumense — Branding &amp; Motion Design Studio Stockholm</title>
+    <meta name="description" content="Award-winning branding, motion design, and graphic design studio in Stockholm. We craft visual identities that convert and endure for ambitious brands." />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0C0C0E" />
+    <link rel="canonical" href="https://lumense.se/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Lumense" />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:url" content="https://lumense.se/" />
+    <meta property="og:title" content="Lumense — Branding &amp; Motion Design Studio Stockholm" />
+    <meta property="og:description" content="Award-winning branding, motion design, and graphic design studio in Stockholm. We craft visual identities that convert and endure for ambitious brands." />
+    <meta property="og:image" content="https://lumense.se/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Lumense — Stockholm Creative Studio" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@lumense" />
+    <meta name="twitter:title" content="Lumense — Branding &amp; Motion Design Studio Stockholm" />
+    <meta name="twitter:description" content="Award-winning branding, motion design, and graphic design studio in Stockholm. We craft visual identities that convert and endure for ambitious brands." />
+    <meta name="twitter:image" content="https://lumense.se/og-image.png" />
+    <meta name="twitter:image:alt" content="Lumense — Stockholm Creative Studio" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+    <!--
+      PERFORMANCE NOTE (pre-launch action required):
+      /public/safermockup.png  = 15 MB — convert to WebP, resize to 1200px wide (target <200 KB)
+      /public/IMG_6242.JPG     = 4.3 MB at 5712×4284 — resize to 1200×900 and convert to WebP
+      Use: `cwebp -q 82 safermockup.png -o safermockup.webp`
+    -->
+
+    <!-- JSON-LD: Organization + ProfessionalService -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://lumense.se/#organization",
+          "name": "Lumense",
+          "url": "https://lumense.se",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://lumense.se/logo-full.svg",
+            "width": 180,
+            "height": 40
+          },
+          "foundingDate": "2022",
+          "description": "Independent creative studio in Stockholm specialising in branding, motion design, and graphic design for ambitious brands.",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Stockholm",
+            "addressCountry": "SE"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "hello@lumense.se",
+            "contactType": "customer service"
+          },
+          "sameAs": [
+            "https://instagram.com/lumense.studio",
+            "https://dribbble.com/lumense"
+          ]
+        },
+        {
+          "@type": "ProfessionalService",
+          "@id": "https://lumense.se/#service",
+          "name": "Lumense",
+          "url": "https://lumense.se",
+          "description": "Branding agency, motion design studio, and graphic design consultancy based in Stockholm, Sweden.",
+          "provider": { "@id": "https://lumense.se/#organization" },
+          "areaServed": "Worldwide",
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Creative Services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Branding & Visual Identity",
+                  "description": "Brand strategy, visual identity systems, logo design, typography, and brand guidelines."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Motion Design",
+                  "description": "Brand films, title sequences, UI animation, social content, and motion style guides."
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Graphic Design",
+                  "description": "Editorial design, campaign materials, packaging, print production, and art direction."
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

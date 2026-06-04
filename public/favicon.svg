@@ -1,0 +1,12 @@
+<svg viewBox="0 0 3 3" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">
+  <style>
+    path { fill: #0A0A0A; }
+    @media (prefers-color-scheme: dark) {
+      path { fill: #ffffff; }
+    }
+  </style>
+  <!-- Top-right block (col 2, row 0) -->
+  <path d="M2,0 L3,0 L3,1 L2,1 Z"/>
+  <!-- Diagonal staircase: col0 rows 0-1, col1 rows 1-2, col2 row 2 -->
+  <path d="M0,0 L1,0 L1,1 L2,1 L2,2 L3,2 L3,3 L1,3 L1,2 L0,2 Z"/>
+</svg>
