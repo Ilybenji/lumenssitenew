@@ -20,13 +20,13 @@ export default function Footer() {
       background: 'var(--color-bg)',
     }}>
       {/* Main footer body */}
-      <div className="container" style={{
+      <div className="container footer-grid" style={{
         display: 'grid',
         gridTemplateColumns: '1fr auto',
         gap: 'var(--space-16)',
         padding: 'var(--space-12) var(--container-pad)',
         alignItems: 'start',
-      }} className="footer-grid">
+      }}>
 
         {/* Left: brand */}
         <div>

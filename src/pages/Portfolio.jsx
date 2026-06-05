@@ -47,13 +47,16 @@ export default function Portfolio() {
                 fontWeight: 500,
                 letterSpacing: '-0.04em',
                 lineHeight: 1.0,
+                display: 'flex',
+                alignItems: 'baseline',
+                gap: 'var(--space-3)',
+                flexWrap: 'wrap',
               }}>
-                Branding &amp; Design Work.
+                <span>Branding &amp; Design Work.</span>
                 <span style={{
                   fontSize: 'var(--text-xl)',
                   color: 'var(--color-muted)',
                   fontWeight: 400,
-                  marginLeft: 'var(--space-3)',
                   letterSpacing: '0',
                   fontVariantNumeric: 'tabular-nums',
                 }}>

@@ -166,10 +166,9 @@ export default function Contact() {
           .channel-row {
             grid-template-columns: 1fr auto !important;
             gap: var(--space-4) !important;
+            padding: var(--space-6) var(--space-5) !important;
           }
-          .channel-row > span:first-child {
-            display: none;
-          }
+          .channel-row > span:first-child { display: none; }
         }
       `}</style>
     </main>

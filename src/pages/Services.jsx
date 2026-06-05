@@ -218,13 +218,11 @@ export default function Services() {
 
       <style>{`
         @media (max-width: 900px) {
-          .service-row {
-            grid-template-columns: 1fr !important;
-            gap: var(--space-4) !important;
-          }
-          .service-inner {
-            grid-template-columns: 1fr !important;
-          }
+          .service-row { grid-template-columns: 1fr !important; gap: var(--space-4) !important; }
+          .service-inner { grid-template-columns: 1fr !important; }
+        }
+        @media (max-width: 768px) {
+          .service-row { padding: var(--space-10) 0 !important; }
         }
       `}</style>
     </main>

@@ -65,7 +65,7 @@ export default function Home() {
   return (
     <main id="main-content">
       {/* ── Hero ───────────────────────────────────────────── */}
-      <div style={{ paddingTop: 'var(--nav-height)', paddingBottom: 'var(--space-32)', width: '100%', overflow: 'hidden', position: 'relative' }}>
+      <div className="hero-wrapper" style={{ paddingTop: 'var(--nav-height)', paddingBottom: 'var(--space-32)', width: '100%', overflow: 'hidden', position: 'relative' }}>
         <AuroraBackground />
         {/* Dense blue sparkles matching the particle section aesthetic */}
         <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 0 }}>
@@ -73,16 +73,16 @@ export default function Home() {
         </div>
         <ContainerScroll
           titleComponent={
-            <>
-              <h1 style={{ fontSize: 'clamp(2.5rem, 5.5vw, 4.5rem)', fontWeight: 600, color: 'var(--color-text)', letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: 'var(--space-8)' }}>
+            <div className="hero-title">
+              <h1 style={{ fontSize: 'clamp(2rem, 5.5vw, 4.5rem)', fontWeight: 600, color: 'var(--color-text)', letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: 'var(--space-6)' }}>
                 Designs meant to{' '}
                 <span style={{ color: 'var(--color-accent)' }}>convert.</span>
               </h1>
-              <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 'var(--space-4)', marginBottom: 'var(--space-5)' }}>
-                <HoverLink to="/contact" variant="accent">Start a Project →</HoverLink>
-                <HoverLink to="/work" variant="outline">View Our Work</HoverLink>
+              <div className="hero-ctas" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 'var(--space-3)', marginBottom: 'var(--space-4)' }}>
+                <HoverLink to="/contact" variant="accent" size="sm">Start a Project →</HoverLink>
+                <HoverLink to="/work" variant="outline" size="sm">View Our Work</HoverLink>
               </div>
-              <div style={{ display: 'inline-flex', alignItems: 'center', borderRadius: '999px', border: '1px solid var(--color-border)', background: 'rgba(18,18,22,0.85)', backdropFilter: 'blur(12px)', padding: '0.25rem 0.75rem 0.25rem 0.25rem', boxShadow: '0 1px 4px rgba(0,0,0,0.3)' }}>
+              <div style={{ display: 'inline-flex', alignItems: 'center', borderRadius: '999px', border: '1px solid var(--color-border)', background: 'rgba(18,18,22,0.85)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', padding: '0.25rem 0.75rem 0.25rem 0.25rem', boxShadow: '0 1px 4px rgba(0,0,0,0.3)' }}>
                 <div style={{ display: 'flex', marginRight: '0.5rem' }}>
                   {[
                     { src: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop&crop=face', name: 'Happy Lumense client' },
@@ -99,7 +99,7 @@ export default function Home() {
                   Trusted by <strong style={{ fontWeight: 600, color: 'var(--color-text)' }}>60+</strong> happy clients.
                 </p>
               </div>
-            </>
+            </div>
           }
         >
           <BeforeAfterSlider
@@ -379,6 +379,9 @@ export default function Home() {
 
       <style>{`
         @media (max-width: 768px) {
+          .hero-wrapper { padding-bottom: var(--space-10) !important; }
+          .hero-title h1 { font-size: 2rem !important; margin-bottom: var(--space-4) !important; }
+          .hero-ctas { gap: var(--space-2) !important; margin-bottom: var(--space-3) !important; }
           .two-col { grid-template-columns: 1fr !important; gap: var(--space-8) !important; }
           .stats-grid { grid-template-columns: 1fr !important; }
         }
