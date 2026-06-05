@@ -62,51 +62,93 @@ export default function Home() {
     path: '/',
   })
 
+  const avatars = [
+    { src: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop&crop=face', name: 'Happy Lumense client' },
+    { src: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=80&h=80&fit=crop&crop=face', name: 'Happy Lumense client' },
+    { src: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=80&h=80&fit=crop&crop=face', name: 'Happy Lumense client' },
+    { src: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=80&h=80&fit=crop&crop=face', name: 'Happy Lumense client' },
+  ]
+
+  const clientPill = (
+    <div style={{ display: 'inline-flex', alignItems: 'center', borderRadius: '999px', border: '1px solid var(--color-border)', background: 'rgba(18,18,22,0.85)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', padding: '0.25rem 0.75rem 0.25rem 0.25rem', boxShadow: '0 1px 4px rgba(0,0,0,0.3)' }}>
+      <div style={{ display: 'flex', marginRight: '0.5rem' }}>
+        {avatars.map(({ src, name }, i) => (
+          <img key={i} src={src} alt={name} width={22} height={22}
+            style={{ width: 22, height: 22, borderRadius: '50%', border: '2px solid white', marginLeft: i === 0 ? 0 : '-6px', objectFit: 'cover' }}
+          />
+        ))}
+      </div>
+      <p style={{ fontSize: '0.72rem', color: 'var(--color-muted)', margin: 0 }}>
+        Trusted by <strong style={{ fontWeight: 600, color: 'var(--color-text)' }}>60+</strong> happy clients.
+      </p>
+    </div>
+  )
+
   return (
     <main id="main-content">
-      {/* ── Hero ───────────────────────────────────────────── */}
-      <div className="hero-wrapper" style={{ paddingTop: 'var(--nav-height)', paddingBottom: 'var(--space-32)', width: '100%', overflow: 'hidden', position: 'relative' }}>
+
+      {/* ── Mobile Hero (≤768px) — flat layout, no scroll animation ── */}
+      <div className="hero-mobile" style={{ paddingTop: 'var(--nav-height)', width: '100%', overflow: 'hidden', position: 'relative' }}>
         <AuroraBackground />
-        {/* Dense blue sparkles matching the particle section aesthetic */}
+        <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 0 }}>
+          <Sparkles density={400} color="#2176AE" opacity={0.85} speed={0.45} />
+        </div>
+        {/* Text block */}
+        <div style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', padding: '2.5rem var(--container-pad) 1.25rem' }}>
+          <h1 style={{ fontSize: 'clamp(2rem, 8vw, 2.8rem)', fontWeight: 600, color: 'var(--color-text)', letterSpacing: '-0.03em', lineHeight: 1.15, marginBottom: '1.25rem' }}>
+            Designs meant to{' '}
+            <span style={{ color: 'var(--color-accent)' }}>convert.</span>
+          </h1>
+          <div style={{ display: 'flex', gap: '0.625rem', marginBottom: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+            <HoverLink to="/contact" variant="accent" size="sm">Start a Project →</HoverLink>
+            <HoverLink to="/work" variant="outline" size="sm">View Our Work</HoverLink>
+          </div>
+          {clientPill}
+        </div>
+        {/* Card */}
+        <div style={{ position: 'relative', zIndex: 1, padding: '1.25rem 1rem 2.5rem' }}>
+          <div style={{ height: '260px', border: '2px solid rgba(255,255,255,0.12)', borderRadius: '16px', overflow: 'hidden', background: '#0C0C0E' }}>
+            <BeforeAfterSlider
+              beforeSrc="/IMG_6242.JPG"
+              afterSrc="/safermockup.png"
+              beforeLabel="Before"
+              afterLabel="After"
+              beforeAlt="Client brief — original photography before brand direction"
+              afterAlt="Lumense brand design — polished visual identity mockup after"
+              defaultPosition={30}
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* ── Desktop Hero (>768px) — ContainerScroll animation ── */}
+      <div className="hero-desktop" style={{ paddingTop: 'var(--nav-height)', paddingBottom: 'var(--space-32)', width: '100%', overflow: 'hidden', position: 'relative' }}>
+        <AuroraBackground />
         <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 0 }}>
           <Sparkles density={700} color="#2176AE" opacity={0.85} speed={0.45} />
         </div>
         <ContainerScroll
           titleComponent={
-            <div className="hero-title">
+            <div>
               <h1 style={{ fontSize: 'clamp(2rem, 5.5vw, 4.5rem)', fontWeight: 600, color: 'var(--color-text)', letterSpacing: '-0.03em', lineHeight: 1.1, marginBottom: 'var(--space-6)' }}>
                 Designs meant to{' '}
                 <span style={{ color: 'var(--color-accent)' }}>convert.</span>
               </h1>
-              <div className="hero-ctas" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 'var(--space-3)', marginBottom: 'var(--space-4)' }}>
+              <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 'var(--space-3)', marginBottom: 'var(--space-4)' }}>
                 <HoverLink to="/contact" variant="accent" size="sm">Start a Project →</HoverLink>
                 <HoverLink to="/work" variant="outline" size="sm">View Our Work</HoverLink>
               </div>
-              <div style={{ display: 'inline-flex', alignItems: 'center', borderRadius: '999px', border: '1px solid var(--color-border)', background: 'rgba(18,18,22,0.85)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', padding: '0.25rem 0.75rem 0.25rem 0.25rem', boxShadow: '0 1px 4px rgba(0,0,0,0.3)' }}>
-                <div style={{ display: 'flex', marginRight: '0.5rem' }}>
-                  {[
-                    { src: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&h=80&fit=crop&crop=face', name: 'Happy Lumense client' },
-                    { src: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=80&h=80&fit=crop&crop=face', name: 'Happy Lumense client' },
-                    { src: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?w=80&h=80&fit=crop&crop=face', name: 'Happy Lumense client' },
-                    { src: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=80&h=80&fit=crop&crop=face', name: 'Happy Lumense client' },
-                  ].map(({ src, name }, i) => (
-                    <img key={i} src={src} alt={name} width={22} height={22}
-                      style={{ width: 22, height: 22, borderRadius: '50%', border: '2px solid white', marginLeft: i === 0 ? 0 : '-6px', objectFit: 'cover' }}
-                    />
-                  ))}
-                </div>
-                <p style={{ fontSize: '0.72rem', color: 'var(--color-muted)', margin: 0 }}>
-                  Trusted by <strong style={{ fontWeight: 600, color: 'var(--color-text)' }}>60+</strong> happy clients.
-                </p>
-              </div>
+              {clientPill}
             </div>
           }
         >
           <BeforeAfterSlider
             beforeSrc="/IMG_6242.JPG"
             afterSrc="/safermockup.png"
-            beforeLabel="Client brief — original photography before brand direction"
-            afterLabel="Lumense brand design — polished visual identity mockup after"
+            beforeLabel="Before"
+            afterLabel="After"
+            beforeAlt="Client brief — original photography before brand direction"
+            afterAlt="Lumense brand design — polished visual identity mockup after"
             defaultPosition={30}
           />
         </ContainerScroll>
@@ -379,9 +421,6 @@ export default function Home() {
 
       <style>{`
         @media (max-width: 768px) {
-          .hero-wrapper { padding-bottom: var(--space-10) !important; }
-          .hero-title h1 { font-size: 2rem !important; margin-bottom: var(--space-4) !important; }
-          .hero-ctas { gap: var(--space-2) !important; margin-bottom: var(--space-3) !important; }
           .two-col { grid-template-columns: 1fr !important; gap: var(--space-8) !important; }
           .stats-grid { grid-template-columns: 1fr !important; }
         }

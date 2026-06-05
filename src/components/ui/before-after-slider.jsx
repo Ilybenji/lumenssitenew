@@ -5,6 +5,8 @@ export default function BeforeAfterSlider({
   afterSrc,
   beforeLabel = "Before",
   afterLabel = "After",
+  beforeAlt,
+  afterAlt,
   defaultPosition = 50,
 }) {
   const containerRef = useRef(null)
@@ -53,7 +55,7 @@ export default function BeforeAfterSlider({
       {/* After image (base layer) */}
       <img
         src={afterSrc}
-        alt={afterLabel}
+        alt={afterAlt ?? afterLabel}
         draggable={false}
         width={1200}
         height={750}
@@ -72,7 +74,7 @@ export default function BeforeAfterSlider({
       >
         <img
           src={beforeSrc}
-          alt={beforeLabel}
+          alt={beforeAlt ?? beforeLabel}
           draggable={false}
           width={1200}
           height={750}
