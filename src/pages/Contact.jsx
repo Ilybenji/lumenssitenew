@@ -5,8 +5,8 @@ import ScrollReveal from '../components/ScrollReveal'
 const CHANNELS = [
   {
     label: 'Email',
-    handle: 'hello@lumense.se',
-    href: 'mailto:hello@lumense.se',
+    handle: 'contactlumense@gmail.com',
+    href: 'mailto:contactlumense@gmail.com',
     description: 'For project enquiries & general questions',
   },
   {
@@ -17,8 +17,8 @@ const CHANNELS = [
   },
   {
     label: 'Instagram',
-    handle: '@lumense.studio',
-    href: 'https://instagram.com/lumense.studio',
+    handle: '@lumense.xyz',
+    href: 'https://instagram.com/lumense.xyz',
     description: 'Behind the scenes & finished work',
   },
 ]

@@ -44,7 +44,7 @@ export default function Footer() {
             An independent creative studio.<br />Stockholm, Sweden.
           </p>
           <a
-            href="mailto:hello@lumense.se"
+            href="mailto:contactlumense@gmail.com"
             style={{
               fontSize: 'var(--text-sm)',
               color: 'var(--color-muted)',
@@ -53,7 +53,7 @@ export default function Footer() {
             onMouseEnter={e => e.target.style.color = 'var(--color-accent)'}
             onMouseLeave={e => e.target.style.color = 'var(--color-muted)'}
           >
-            hello@lumense.se
+            contactlumense@gmail.com
           </a>
         </div>
 
