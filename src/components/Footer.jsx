@@ -17,7 +17,7 @@ export default function Footer() {
   return (
     <footer style={{
       borderTop: '1px solid var(--color-border)',
-      background: 'var(--color-bg)',
+      background: 'transparent',
     }}>
       {/* Main footer body */}
       <div className="container footer-grid" style={{

@@ -422,7 +422,8 @@ export default function Home() {
       <style>{`
         @media (max-width: 768px) {
           .two-col { grid-template-columns: 1fr !important; gap: var(--space-8) !important; }
-          .stats-grid { grid-template-columns: 1fr !important; }
+          .stats-grid { grid-template-columns: 1fr 1fr !important; }
+          .stats-grid > *:last-child { grid-column: 1 / -1; }
         }
       `}</style>
     </main>

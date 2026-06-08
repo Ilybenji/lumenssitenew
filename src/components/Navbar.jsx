@@ -14,11 +14,18 @@ const links = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [isMobile, setIsMobile] = useState(() => typeof window !== 'undefined' && window.innerWidth <= 768)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 32)
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  useEffect(() => {
+    const onResize = () => setIsMobile(window.innerWidth <= 768)
+    window.addEventListener('resize', onResize, { passive: true })
+    return () => window.removeEventListener('resize', onResize)
   }, [])
 
   useEffect(() => {
@@ -30,7 +37,11 @@ export default function Navbar() {
     <>
       {/* Outer nav — always fixed full-width, adds top padding when floating */}
       <motion.nav
-        animate={{ paddingTop: scrolled ? 12 : 0, paddingLeft: scrolled ? 20 : 0, paddingRight: scrolled ? 20 : 0 }}
+        animate={{
+          paddingTop: (scrolled && !isMobile) ? 12 : 0,
+          paddingLeft: (scrolled && !isMobile) ? 20 : 0,
+          paddingRight: (scrolled && !isMobile) ? 20 : 0,
+        }}
         transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
         style={{
           position: 'fixed',
@@ -42,9 +53,9 @@ export default function Navbar() {
       >
         {/* Inner pill — this is what visually changes */}
         <div
-          className={`nav-pill${scrolled ? ' nav-pill--floating' : ''}`}
+          className={`nav-pill${(scrolled && !isMobile) ? ' nav-pill--floating' : ''}`}
           style={{
-            maxWidth: scrolled ? '1100px' : '100%',
+            maxWidth: (scrolled && !isMobile) ? '1100px' : '100%',
             margin: '0 auto',
             height: '60px',
             display: 'flex',
@@ -56,9 +67,9 @@ export default function Navbar() {
             background: scrolled ? 'rgba(12,12,14,0.88)' : 'rgba(255,255,255,0.02)',
             backdropFilter: 'blur(24px)',
             WebkitBackdropFilter: 'blur(24px)',
-            borderRadius: scrolled ? '9999px' : '0px',
-            border: scrolled ? '1px solid rgba(255,255,255,0.08)' : '1px solid rgba(255,255,255,0)',
-            boxShadow: scrolled ? '0 8px 32px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.05)' : 'none',
+            borderRadius: (scrolled && !isMobile) ? '9999px' : '0px',
+            border: (scrolled && !isMobile) ? '1px solid rgba(255,255,255,0.08)' : '1px solid rgba(255,255,255,0)',
+            boxShadow: (scrolled && !isMobile) ? '0 8px 32px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.05)' : 'none',
           }}
         >
           <Link to="/" style={{ display: 'flex', alignItems: 'center' }} aria-label="Lumense home">

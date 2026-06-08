@@ -234,9 +234,23 @@ body::after {
 /* ── Skip to content ────────────────────────────────── */
 
 .skip-link {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+.skip-link:focus-visible {
+  clip: auto;
+  clip-path: none;
+  height: auto;
+  overflow: visible;
   position: fixed;
   top: var(--space-4);
   left: var(--space-4);
+  width: auto;
   z-index: 9999;
   padding: var(--space-3) var(--space-5);
   background: var(--color-accent);
@@ -244,11 +258,6 @@ body::after {
   font-size: var(--text-sm);
   font-weight: 500;
   letter-spacing: 0.04em;
-  transform: translateY(-200%);
-  transition: transform 0.2s var(--ease);
-}
-.skip-link:focus {
-  transform: translateY(0);
 }
 
 /* ── Balanced headlines ─────────────────────────────── */
