@@ -5,7 +5,14 @@ import ScrollReveal from '../components/ScrollReveal'
 import PortfolioCard from '../components/PortfolioCard'
 
 const PROJECTS = [
-  { id: 1, title: 'Norr Identity', category: 'Branding', year: '2024' },
+  {
+    id: 1,
+    title: 'Safer',
+    category: 'Branding',
+    year: '2025',
+    image: '/safermockup.png',
+    href: 'https://t.me/safer',
+  },
   { id: 2, title: 'Sequence 001', category: 'Motion', year: '2024' },
   { id: 3, title: 'Forma Annual Report', category: 'Graphic', year: '2023' },
 ]
@@ -130,6 +137,8 @@ export default function Portfolio() {
                     title={project.title}
                     category={project.category}
                     year={project.year}
+                    image={project.image}
+                    href={project.href}
                     index={i}
                     featured={i === 0}
                   />

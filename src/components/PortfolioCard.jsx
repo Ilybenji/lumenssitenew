@@ -2,10 +2,15 @@ import { motion } from 'framer-motion'
 
 const CARD_GRADIENT = 'linear-gradient(160deg, #1A1A22 0%, #141418 100%)'
 
-export default function PortfolioCard({ title, category, year, index }) {
+export default function PortfolioCard({ title, category, year, image, href, index }) {
+  const Card = href ? motion.a : motion.article
+
   return (
-    <motion.article
+    <Card
       layout
+      href={href}
+      target={href ? '_blank' : undefined}
+      rel={href ? 'noopener noreferrer' : undefined}
       aria-label={`${title} — ${category} project, ${year}`}
       initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
@@ -17,6 +22,9 @@ export default function PortfolioCard({ title, category, year, index }) {
         border: '1px solid var(--color-border)',
         display: 'flex',
         flexDirection: 'column',
+        color: 'inherit',
+        textDecoration: 'none',
+        cursor: href ? 'pointer' : 'default',
         transition: 'border-color 0.25s ease',
       }}
       whileHover="hover"
@@ -28,6 +36,20 @@ export default function PortfolioCard({ title, category, year, index }) {
         background: CARD_GRADIENT,
         overflow: 'hidden',
       }}>
+        {image && (
+          <img
+            src={image}
+            alt=""
+            style={{
+              position: 'absolute',
+              inset: 0,
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+            }}
+          />
+        )}
+
         {/* Accent bar — slides in on hover */}
         <motion.div
           variants={{ hover: { scaleY: 1 }, initial: { scaleY: 0 } }}
@@ -115,6 +137,6 @@ export default function PortfolioCard({ title, category, year, index }) {
           {category}
         </span>
       </div>
-    </motion.article>
+    </Card>
   )
 }
